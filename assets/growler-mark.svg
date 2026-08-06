@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 44" fill="none" aria-hidden="true">
+  <!-- Handle -->
+  <path d="M26 12 Q34 12 34 20 Q34 28 26 28" stroke="#1a0f06" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Shoulder -->
+  <path d="M10 12 Q8 12 7 16 L6 36 Q6 40 10 40 L26 40 Q30 40 30 36 L29 16 Q28 12 26 12 Z" fill="#c05028"/>
+  <!-- Neck -->
+  <rect x="13" y="5" width="10" height="7" rx="2" fill="#1a0f06"/>
+  <!-- Cap -->
+  <rect x="11" y="2" width="14" height="5" rx="2.5" fill="#1a0f06"/>
+  <!-- Label band -->
+  <rect x="10" y="22" width="16" height="10" rx="3" fill="rgba(245,236,216,0.35)"/>
+</svg>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nominate &amp; Vote | The Growler Fund</title>
+  <meta name="description" content="Nominate a San Diego nonprofit and vote on this season's gift recipient.">
+  <link rel="stylesheet" href="/styles/shared.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <img src="/assets/growler-mark.svg" alt="" class="site-logo-mark">
+        <span class="site-logo-name">The Growler Fund</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="site-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works-faq">How it works</a></li>
+          <li><a href="/vote" aria-current="page">Nominate</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/contact">About</a></li>
+        </ul>
+      </nav>
+      <a href="https://www.grapevine.org/giving-circle/ZZWhAL2/San-Diego-Giving-Circle"
+         class="btn-primary"
+         target="_blank" rel="noopener">Pledge $50 ↗</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+
+      <!-- Block A: Page head -->
+      <section class="block-head">
+        <span class="kicker">Nominate &amp; vote</span>
+        <div class="block-head-inner no-motif">
+          <div class="block-head-copy">
+            <h1 class="md">Your vote moves<br>the money.</h1>
+            <p class="block-head-intro">
+              Pledging members nominate local nonprofits each season, then vote to decide
+              who receives the full pooled gift. One person, one vote — no exceptions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nomination form -->
+      <section class="block-form">
+        <div class="form-copy">
+          <h2>Nominate a nonprofit</h2>
+          <p>
+            Know a San Diego nonprofit doing meaningful work? Nominate them.
+            Any pledging member can submit one nomination per season.
+            We'll verify 501(c)(3) status and add eligible nominations to the ballot.
+          </p>
+        </div>
+        <div class="form-fields">
+          <form action="https://formspree.io/f/placeholder" method="POST" novalidate>
+            <label for="nom-org">Organization name</label>
+            <input type="text" id="nom-org" name="organization" placeholder="e.g. San Diego Food Bank" required>
+
+            <label for="nom-why">Why should they win?</label>
+            <input type="text" id="nom-why" name="reason" placeholder="One sentence on why this season">
+
+            <label for="nom-email">Your email (to confirm your pledge)</label>
+            <input type="email" id="nom-email" name="email" placeholder="you@example.com" required autocomplete="email">
+
+            <button type="submit" class="btn-primary">Submit nomination →</button>
+          </form>
+          <p class="form-reassurance">Only members with an active pledge may nominate.</p>
+        </div>
+      </section>
+
+      <!-- Current nominees -->
+      <section>
+        <span class="kicker">This season's nominees</span>
+        <div class="vote-gate">
+          <p>
+            Nominations are currently open. The ballot will be published to pledging members
+            once nominations close and eligibility is confirmed.
+            <a href="https://www.grapevine.org/giving-circle/ZZWhAL2/San-Diego-Giving-Circle"
+               target="_blank" rel="noopener"
+               style="color:var(--color-terracotta);">Pledge now ↗</a>
+            to secure your vote.
+          </p>
+        </div>
+      </section>
+
+      <!-- Block D: Nomination rules -->
+      <section class="block-split">
+        <div class="block-split-inner">
+          <div class="block-split-heading">
+            <h2>Nomination rules</h2>
+          </div>
+          <div class="block-split-body">
+            <div class="split-item">
+              <h4>Who can nominate?</h4>
+              <p>Any member with an active pledge for the current season. Your pledge must be live before nominations close.</p>
+            </div>
+            <div class="split-item">
+              <h4>How many nominations per member?</h4>
+              <p>One. Choose carefully — duplicate submissions from the same member are discarded.</p>
+            </div>
+            <div class="split-item">
+              <h4>What orgs are eligible?</h4>
+              <p>Registered 501(c)(3) organizations with a primary focus on serving San Diego County. National orgs with an active local presence may qualify.</p>
+            </div>
+            <div class="split-item">
+              <h4>Can I nominate my own org?</h4>
+              <p>No. Members cannot nominate organizations they are employed by, on the board of, or financially affiliated with.</p>
+            </div>
+            <div class="split-item">
+              <h4>How is the shortlist picked?</h4>
+              <p>All eligible nominations go to a member-wide vote. There's no editorial filter — if it's eligible, it's on the ballot.</p>
+            </div>
+            <div class="split-item">
+              <h4>When is voting?</h4>
+              <p>After nominations close, pledging members receive a private ballot link by email. Voting is open for approximately two weeks.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block H: CTA -->
+      <section class="block-cta">
+        <h2>Not pledged yet? You need to be.</h2>
+        <div class="block-cta-actions">
+          <a href="https://www.grapevine.org/giving-circle/ZZWhAL2/San-Diego-Giving-Circle"
+             class="btn-primary"
+             target="_blank" rel="noopener">Pledge $50 on Grapevine ↗</a>
+          <a href="/how-it-works-faq" class="btn-outline">How it works</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <img src="/assets/growler-mark.svg" alt="" class="site-logo-mark">
+          <span class="site-logo-name">The Growler Fund</span>
+        </a>
+        <p>A San Diego giving circle pooling $50 pledges to make a real difference, one season at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>The Circle</h4>
+        <ul>
+          <li><a href="/how-it-works-faq">How it works</a></li>
+          <li><a href="/how-it-works-faq#guidelines">Community guidelines</a></li>
+          <li><a href="/contact">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Part</h4>
+        <ul>
+          <li><a href="https://www.grapevine.org/giving-circle/ZZWhAL2/San-Diego-Giving-Circle" target="_blank" rel="noopener">Pledge $50 ↗</a></li>
+          <li><a href="/vote">Nominate &amp; vote</a></li>
+          <li><a href="/events">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:charlie@charliecsmith.com" class="plain">charlie@charliecsmith.com</a></li>
+          <li><a href="tel:7608462341" class="plain">760-846-2341</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <hr class="footer-divider">
+      <p class="footer-legal">© 2025 The Growler Fund. All gifts processed securely through Grapevine.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
