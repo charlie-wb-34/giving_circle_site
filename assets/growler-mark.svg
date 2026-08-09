@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 44" fill="none" aria-hidden="true">
-  <!-- Handle -->
-  <path d="M26 12 Q34 12 34 20 Q34 28 26 28" stroke="#1a0f06" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <!-- Shoulder -->
-  <path d="M10 12 Q8 12 7 16 L6 36 Q6 40 10 40 L26 40 Q30 40 30 36 L29 16 Q28 12 26 12 Z" fill="#c05028"/>
-  <!-- Neck -->
-  <rect x="13" y="5" width="10" height="7" rx="2" fill="#1a0f06"/>
-  <!-- Cap -->
-  <rect x="11" y="2" width="14" height="5" rx="2.5" fill="#1a0f06"/>
-  <!-- Label band -->
-  <rect x="10" y="22" width="16" height="10" rx="3" fill="rgba(245,236,216,0.35)"/>
+<svg width="250" height="370" viewBox="225 35 250 370" xmlns="http://www.w3.org/2000/svg" role="img"><title>Growler Philanthropists mark</title>
+<defs>
+<clipPath id="jugClip">
+<path d="M315,72 L365,72 L365,100 C365,120 400,130 415,165 C428,195 430,225 430,260 C430,300 428,335 415,360 C400,385 380,395 340,395 C300,395 280,385 265,360 C252,335 250,300 250,260 C250,225 252,195 265,165 C280,130 315,120 315,100 Z"></path>
+</clipPath>
+</defs>
+<rect x="230" y="255" width="220" height="150" fill="#E8A33D" clip-path="url(#jugClip)"></rect>
+<line x1="250" y1="258" x2="430" y2="258" stroke="#F4C878" stroke-width="2" clip-path="url(#jugClip)"></line>
+<circle cx="340" cy="48" r="5" fill="none" stroke="#B8721F" stroke-width="3"></circle>
+<rect x="305" y="50" width="70" height="24" rx="6" fill="none" stroke="#B8721F" stroke-width="4" stroke-linejoin="round"></rect>
+<path d="M425,185 C455,185 470,205 470,225 C470,245 455,260 425,258" fill="none" stroke="#B8721F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M315,72 L365,72 L365,100 C365,120 400,130 415,165 C428,195 430,225 430,260 C430,300 428,335 415,360 C400,385 380,395 340,395 C300,395 280,385 265,360 C252,335 250,300 250,260 C250,225 252,195 265,165 C280,130 315,120 315,100 Z" fill="none" stroke="#B8721F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
