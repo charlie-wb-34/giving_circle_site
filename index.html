@@ -49,12 +49,18 @@
   a:not(.btn):hover{color:var(--color-accent-2-600)}
   .nav a.btn-primary,.btn-primary{color:var(--color-bg)}
   .how-carousel-controls{display:none}
+  .season-carousel-controls{display:none}
   @media (max-width:719px){
     .how-cards{display:block !important}
     .how-cards>.card:not(.how-active){display:none}
     .how-carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:var(--space-4)}
     .how-carousel-btn{background:var(--color-surface);border:1px solid var(--color-divider);border-radius:50%;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--color-text);flex-shrink:0}
     .how-carousel-counter{font-family:var(--font-heading);font-size:18px;font-weight:800;letter-spacing:0.005em;text-transform:uppercase}
+    .whos-in-grid{grid-template-columns:1fr !important}
+    .whos-in-svg{display:none !important}
+    .season-cards{display:block !important}
+    .season-cards>.season-item:not(.season-active){display:none !important}
+    .season-carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:var(--space-4)}
   }
   </style>
 </head>
@@ -148,8 +154,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div style="display:flex;justify-content:center;margin-bottom:calc(var(--space-8) * 2)">
-    <div style="width:100%;background:var(--color-accent-200);border-radius:calc(var(--radius-lg) * 1.15);box-shadow:var(--shadow-md);padding:calc(var(--space-8) * 1.1) var(--space-8);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-8);align-items:center">
-      <svg viewBox="0 0 300 190" width="100%" role="img" aria-labelledby="roundTitle" style="display:block;width:100%;max-width:420px;height:auto;aspect-ratio:300 / 190">
+    <div class="whos-in-grid" style="width:100%;background:var(--color-accent-200);border-radius:calc(var(--radius-lg) * 1.15);box-shadow:var(--shadow-md);padding:calc(var(--space-8) * 1.1) var(--space-8);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-8);align-items:center">
+      <svg class="whos-in-svg" viewBox="0 0 300 190" width="100%" role="img" aria-labelledby="roundTitle" style="display:block;width:100%;max-width:420px;height:auto;aspect-ratio:300 / 190">
         <title id="roundTitle">A round of five glasses carried to the table</title>
         <g fill="none" stroke="var(--color-accent-800)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
           <g stroke-width="3.5">
@@ -176,66 +182,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="season" style="scroll-margin-top:var(--space-6);margin-bottom:calc(var(--space-8) * 2);background:var(--color-accent-2-100);border-radius:calc(var(--radius-lg) * 1.15);padding:var(--space-8)">
     <h6 style="color:var(--color-accent-2-700);margin-bottom:var(--space-6)">HOW WE GET THERE</h6>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-6)">
-      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+    <div class="season-cards" style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-6)">
+      <div class="season-item season-active" style="display:flex;flex-direction:column;gap:var(--space-2)">
         <span style="width:14px;height:14px;border-radius:50%;background:var(--color-accent-2-500);display:inline-block"></span>
         <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-2-800)">Sept 3</div>
         <div style="font-family:var(--font-heading);font-size:24px;line-height:1.15">First Meeting! Location TBD</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+      <div class="season-item" style="display:flex;flex-direction:column;gap:var(--space-2)">
         <span style="width:14px;height:14px;border-radius:50%;background:var(--color-accent-2-500);display:inline-block"></span>
         <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-2-800)">Sept - Nov</div>
         <div style="font-family:var(--font-heading);font-size:24px;line-height:1.15">There's bi-weekly happy hours and chances to meetup. Attendance not required! Details TBD</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+      <div class="season-item" style="display:flex;flex-direction:column;gap:var(--space-2)">
         <span style="width:14px;height:14px;border-radius:50%;background:var(--color-accent-2-500);display:inline-block"></span>
         <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-2-800)">Nov 19</div>
         <div style="font-family:var(--font-heading);font-size:24px;line-height:1.15">Members vote on which organization should get the money</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+      <div class="season-item" style="display:flex;flex-direction:column;gap:var(--space-2)">
         <span style="width:14px;height:14px;border-radius:50%;background:var(--color-accent-2-500);display:inline-block"></span>
         <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-2-800)">Dec 3</div>
         <div style="font-family:var(--font-heading);font-size:24px;line-height:1.15">One lucky organization gets a check!</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+      <div class="season-item" style="display:flex;flex-direction:column;gap:var(--space-2)">
         <span style="width:14px;height:14px;border-radius:50%;background:var(--color-accent-2-500);display:inline-block"></span>
         <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-2-800)">Going forward:</div>
         <div style="font-family:var(--font-heading);font-size:24px;line-height:1.15">We'll come back in the new year, revamped with a new cycle and new goal!</div>
       </div>
     </div>
+    <div class="season-carousel-controls">
+      <button class="how-carousel-btn" id="season-prev" aria-label="Previous step">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <span class="how-carousel-counter" id="season-counter">1 / 5</span>
+      <button class="how-carousel-btn" id="season-next" aria-label="Next step">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
   </div>
 
-  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:var(--space-8);margin-bottom:calc(var(--space-8) * 2);align-items:start">
+  <div class="faq-section" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:var(--space-8);margin-bottom:calc(var(--space-8) * 2);align-items:start">
     <h2 style="font-size:56px;line-height:0.95;margin:0">You might be wondering</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)">
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">Who is this group for?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">This was made by two professionals in San Diego that just wanted a reason to meet more regularly, meet more people, and do some good! If that sounds like you - then this group is for you</p>
-      </div>
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">Where does the money sit?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">The money is held by grapevine.org, a platform specifically designed for giving circles. They will handle the fund disbrusements and donations</p>
-      </div>
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">What's required of members?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">Only a $50 contribution. We'll plan on hosting a variety of happy hours and other types of events. We will share those out via email and instagram. No attendance is required!</p>
-      </div>
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">What organizations can be nominated?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">Any 501c3 nonprofit that isn't a single-cause political organization or religious-affiliated organization</p>
-      </div>
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">Is it tax-deductible?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">The gift is 100% tax-deductible and you'll receive a tax receipt upon completing your donation</p>
-      </div>
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">What is Grapevine and should I trust it?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">Grapevine is the donation processing platform. It is not associated with this group but we chose to use it to process the tax-deductible $50 donations</p>
-      </div>
-      <div>
-        <h4 style="font-size:19px;margin-bottom:var(--space-2)">Who started this darn thing?</h4>
-        <p style="font-size:15px;line-height:1.6;margin:0;color:var(--color-neutral-800);text-wrap:pretty">For feedback (good or bad) and questions, feel free to reach out to Charlie Smith at <a href="mailto:charlie@charliecsmith.com">charlie@charliecsmith.com</a></p>
-      </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-question">Who is this group for?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">This was made by two professionals in San Diego that just wanted a reason to meet more regularly, meet more people, and do some good! If that sounds like you - then this group is for you</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Where does the money sit?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">The money is held by grapevine.org, a platform specifically designed for giving circles. They will handle the fund disbrusements and donations</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">What's required of members?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">Only a $50 contribution. We'll plan on hosting a variety of happy hours and other types of events. We will share those out via email and instagram. No attendance is required!</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">What organizations can be nominated?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">Any 501c3 nonprofit that isn't a single-cause political organization or religious-affiliated organization</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Is it tax-deductible?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">The gift is 100% tax-deductible and you'll receive a tax receipt upon completing your donation</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">What is Grapevine and should I trust it?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">Grapevine is the donation processing platform. It is not associated with this group but we chose to use it to process the tax-deductible $50 donations</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Who started this darn thing?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="faq-answer">For feedback (good or bad) and questions, feel free to reach out to Charlie Smith at <a href="mailto:charlie@charliecsmith.com">charlie@charliecsmith.com</a></p>
+      </details>
     </div>
   </div>
 
@@ -244,7 +259,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <footer style="padding-block:calc(var(--space-8) * 1.5);">
     <div style="max-width:1080px;margin:0 auto;padding-inline:var(--space-8);">
-      <div style="background:var(--color-surface);border-radius:calc(var(--radius-lg) * 1.15);padding:var(--space-8);display:grid;grid-template-columns:minmax(300px,1.4fr) repeat(3,minmax(0,1fr));gap:var(--space-6)">
+      <div class="footer-grid" style="background:var(--color-surface);border-radius:calc(var(--radius-lg) * 1.15);padding:var(--space-8);display:grid;grid-template-columns:minmax(300px,1.4fr) repeat(3,minmax(0,1fr));gap:var(--space-6)">
         <div>
           <div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-heading);font-size:18px;margin-bottom:var(--space-2)">
             <img src="/assets/growler-mark.svg" alt="Growler Philanthropists" style="height:28px;width:auto;display:block;flex:none;">
@@ -253,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="text-muted" style="font-size:13px;margin:0;max-width:26ch">Connecting San Diegans to the causes they care about over drinks and fun events</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:14px">
-          <span class="text-muted" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">The circle</span>
+          <span class="text-muted" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">Learn More</span>
           <a href="/contact">About</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:14px">
@@ -264,7 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:14px">
           <span class="text-muted" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">Contact</span>
-          <a href="mailto:charlie@charliecsmith.com" style="font-size:13px;overflow-wrap:anywhere">charlie@charliecsmith.com</a>
+          <a href="mailto:charlie@charliecsmith.com">Email</a>
           <a href="tel:+17608462341">760-846-2341</a>
         </div>
       </div>
@@ -285,6 +300,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   var prev=document.getElementById('how-prev');
   var next=document.getElementById('how-next');
+  if(prev)prev.addEventListener('click',function(){go(-1)});
+  if(next)next.addEventListener('click',function(){go(1)});
+})();
+(function(){
+  var idx=0;
+  var items=document.querySelectorAll('.season-cards>.season-item');
+  var counter=document.getElementById('season-counter');
+  function go(d){
+    items[idx].classList.remove('season-active');
+    idx=(idx+d+items.length)%items.length;
+    items[idx].classList.add('season-active');
+    if(counter)counter.textContent=(idx+1)+' / '+items.length;
+  }
+  var prev=document.getElementById('season-prev');
+  var next=document.getElementById('season-next');
   if(prev)prev.addEventListener('click',function(){go(-1)});
   if(next)next.addEventListener('click',function(){go(1)});
 })();

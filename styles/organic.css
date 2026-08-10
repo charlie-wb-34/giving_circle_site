@@ -251,7 +251,43 @@ textarea.input { min-height: 90px; resize: vertical; }
   .nav .btn-icon { display: none; }
   .nav-hamburger { display: flex; align-items: center; justify-content: center; }
   .nav-mobile.open { display: flex; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    padding: var(--space-6) !important;
+    gap: var(--space-4) !important;
+  }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
+  .footer-grid > :first-child p { font-size: 12px !important; }
+  .footer-grid a { font-size: 13px !important; }
+  footer > div { padding-inline: var(--space-4) !important; }
+  /* match interior padding of green sections to white how-cards */
+  #season { padding-left: var(--space-6) !important; padding-right: var(--space-6) !important; }
+  .whos-in-grid { padding-left: var(--space-6) !important; padding-right: var(--space-6) !important; }
+  /* faq: stack title above questions */
+  .faq-section { grid-template-columns: 1fr !important; }
 }
+
+/* — faq accordion — */
+.faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--color-divider); }
+.faq-item { border-bottom: 1px solid var(--color-divider); }
+.faq-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--color-text);
+  user-select: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-chevron { flex-shrink: 0; transition: transform 0.2s ease; }
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+.faq-answer { font-size: 15px; line-height: 1.6; color: var(--color-neutral-800); margin: 0 0 var(--space-4); text-wrap: pretty; }
 
 /* — tables — */
 .table { width: 100%; border-collapse: collapse; font-size: 14px; }
