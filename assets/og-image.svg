@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F3226"/>
+  <g transform="translate(526, 95) scale(0.595) translate(-225, -35)">
+    <defs>
+      <clipPath id="ogJugClip">
+        <path d="M315,72 L365,72 L365,100 C365,120 400,130 415,165 C428,195 430,225 430,260 C430,300 428,335 415,360 C400,385 380,395 340,395 C300,395 280,385 265,360 C252,335 250,300 250,260 C250,225 252,195 265,165 C280,130 315,120 315,100 Z"/>
+      </clipPath>
+    </defs>
+    <rect x="230" y="255" width="220" height="150" fill="#e0cfae" clip-path="url(#ogJugClip)"/>
+    <line x1="250" y1="258" x2="430" y2="258" stroke="#f5ead8" stroke-width="2" clip-path="url(#ogJugClip)"/>
+    <circle cx="340" cy="48" r="5" fill="none" stroke="#f5ead8" stroke-width="3"/>
+    <rect x="305" y="50" width="70" height="24" rx="6" fill="none" stroke="#f5ead8" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M425,185 C455,185 470,205 470,225 C470,245 455,260 425,258" fill="none" stroke="#f5ead8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M315,72 L365,72 L365,100 C365,120 400,130 415,165 C428,195 430,225 430,260 C430,300 428,335 415,360 C400,385 380,395 340,395 C300,395 280,385 265,360 C252,335 250,300 250,260 C250,225 252,195 265,165 C280,130 315,120 315,100 Z" fill="none" stroke="#f5ead8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="600" y="500" text-anchor="middle" font-family="'Big Shoulders Display', 'Arial Black', sans-serif" font-weight="800" font-size="52" fill="#f5ead8" letter-spacing="2" text-transform="uppercase">GROWLER PHILANTHROPISTS</text>
+</svg>
