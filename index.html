@@ -37,6 +37,11 @@
     h1{font-size:34px !important;line-height:1.02 !important;max-width:none !important}
     h2{font-size:28px !important;line-height:1.05 !important}
     h3{font-size:24px !important}
+    .hero-wrap{padding-top:var(--space-4) !important}
+    .hero-h1{margin-top:0 !important;margin-bottom:var(--space-3) !important}
+    .hero-bar{margin-bottom:var(--space-3) !important}
+    .hero-p{font-size:17px !important;margin-bottom:var(--space-2) !important}
+    .hero-ul{font-size:17px !important}
   }
   h1,h2,h3,h4,h5,h6,.card-title,.nav-brand{font-family:var(--font-heading);text-transform:uppercase;letter-spacing:0.005em;font-weight:800}
   h1{line-height:0.92}
@@ -80,6 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
         <a href="/" aria-current="page">Home</a>
+        <a href="/kickoff">Kickoff</a>
         <a href="/vote">Nominate</a>
         <a href="/events">Events</a>
         <a href="/contact">About</a>
@@ -102,22 +108,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </header>
 
   <main>
-<div style="max-width:1080px;margin:0 auto;padding:calc(var(--space-8) * 1.4) var(--space-8) calc(var(--space-8) * 2.4)">
+<div class="hero-wrap" style="max-width:1080px;margin:0 auto;padding:calc(var(--space-8) * 1.4) var(--space-8) calc(var(--space-8) * 2.4)">
 
   <div style="margin-bottom:calc(var(--space-8) * 2)">
     <div>
-      <h1 style="font-size:48px;line-height:0.92;margin:var(--space-4) 0 var(--space-6);max-width:16ch;text-wrap:balance">Grab some post-work drinks and do some good</h1>
-      <div style="height:8px;width:120px;background:var(--color-accent-2);margin-bottom:var(--space-6)"></div>
-      <p style="font-size:20px;line-height:1.6;max-width:52ch;margin-bottom:var(--space-3);text-wrap:pretty">This Fall, we're combining our love of a good happy hour with giving back to San Diego.</p>
-      <p style="font-size:20px;line-height:1.6;max-width:52ch;margin-bottom:var(--space-3);text-wrap:pretty">We'll be out every other Thursday at a bar/restaurant in San Diego and want your help with <strong>two important goals</strong></p>
+      <h1 class="hero-h1" style="font-size:48px;line-height:0.92;margin:var(--space-4) 0 var(--space-6);max-width:16ch;text-wrap:balance">Grab some post-work drinks and do some good</h1>
+      <div class="hero-bar" style="height:8px;width:120px;background:var(--color-accent-2);margin-bottom:var(--space-6)"></div>
+      <p class="hero-p" style="font-size:20px;line-height:1.6;max-width:52ch;margin-bottom:var(--space-3);text-wrap:pretty">This Fall, we're combining our love of a good happy hour with giving back to San Diego.</p>
+      <p class="hero-p" style="font-size:20px;line-height:1.6;max-width:52ch;margin-bottom:var(--space-3);text-wrap:pretty">We'll be out every other Thursday at a bar/restaurant in San Diego and want your help with <strong>two important goals</strong></p>
 
-      <ul style="list-style:none;font-size:20px;line-height:1.6;max-width:52ch;margin:0 0 var(--space-3);padding-left:var(--space-7);text-wrap:pretty">
+      <ul class="hero-ul" style="list-style:none;font-size:20px;line-height:1.6;max-width:52ch;margin:0 0 var(--space-3);padding-left:var(--space-7);text-wrap:pretty">
         <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:var(--space-2)"><img src="assets/growler-mark.svg" alt="" style="width:14px;flex:none;margin-top:5px">Create a community of professionals working in the area looking to expand their circle</li>
         <li style="display:flex;align-items:flex-start;gap:10px"><img src="assets/growler-mark.svg" alt="" style="width:14px;flex:none;margin-top:5px">Provide $5000 to a non-political and non-religious based nonprofit in San Diego</li>
       </ul>
       <p style="font-size:20px;line-height:1.6;max-width:52ch;margin-bottom:var(--space-6);text-wrap:pretty">Growler Philanthropists is a <a href="https://en.wikipedia.org/wiki/Giving_circle" target="_blank" rel="noopener">Giving Circle</a>. Everyone pitches in $50 so that as a group we can make one large donation to a single non-profit <a href="pages/vote.html">organization</a> serving San Diego.</p>
       <p style="font-size:20px;line-height:1.6;max-width:52ch;margin-bottom:var(--space-4);text-wrap:pretty">We'd love your help and look forward to meeting you!</p>
-      <div style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap">
+      <div id="hero-cta" style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap">
         <a href="https://www.grapevine.org/giving-circle/ZZWhAL2/San-Diego-Giving-Circle" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:16px;padding:var(--space-3) var(--space-6)">Join</a>
         <a href="https://www.instagram.com/growlerfund?igsh=MWJvdWZhem1wZXJ2Nw&amp;utm_source=qr" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:16px;padding:var(--space-3) var(--space-6);display:inline-flex;align-items:center;gap:var(--space-2)">Follow along <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor"></circle></svg></a>
       </div>
@@ -323,6 +329,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var next=document.getElementById('season-next');
   if(prev)prev.addEventListener('click',function(){go(-1)});
   if(next)next.addEventListener('click',function(){go(1)});
+})();
+</script>
+
+<!-- Kickoff popup -->
+<div id="kickoff-popup" role="dialog" aria-label="Kickoff event" style="position:fixed;bottom:24px;right:24px;z-index:200;background:#0F3226;color:#EEF1EC;border-radius:10px;padding:20px 24px;max-width:320px;width:calc(100vw - 48px);box-shadow:0 8px 32px rgba(0,0,0,0.22);visibility:hidden;transform:translateY(20px);opacity:0;transition:transform 0.35s ease,opacity 0.35s ease,visibility 0.35s;">
+  <button id="kickoff-popup-close" aria-label="Dismiss" style="position:absolute;top:10px;right:10px;background:none;border:none;cursor:pointer;color:#A2C7B6;padding:4px;line-height:1;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C6D63C;font-weight:600;margin-bottom:8px;">Kickoff Event</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-size:24px;font-weight:800;text-transform:uppercase;line-height:1.05;margin-bottom:8px;">Sept 17 at Kairoa Brewing</div>
+  <p style="font-size:14px;line-height:1.55;margin:0 0 16px;color:#A2C7B6;">Our first gathering — come say hi, no membership required.</p>
+  <a href="/kickoff" style="display:inline-block;background:#C6D63C;color:#3E4814;font-weight:600;font-size:14px;padding:8px 20px;border-radius:4px;text-decoration:none;">See details</a>
+</div>
+
+<script>
+(function(){
+  var popup = document.getElementById('kickoff-popup');
+  var cta = document.getElementById('hero-cta');
+  var close = document.getElementById('kickoff-popup-close');
+  var shown = false;
+  var dismissed = false;
+
+  function show() {
+    if (shown || dismissed) return;
+    shown = true;
+    popup.style.visibility = 'visible';
+    popup.style.opacity = '1';
+    popup.style.transform = 'translateY(0)';
+  }
+
+  function hide() {
+    dismissed = true;
+    popup.style.opacity = '0';
+    popup.style.transform = 'translateY(20px)';
+    popup.style.visibility = 'hidden';
+  }
+
+  close.addEventListener('click', hide);
+
+  window.addEventListener('scroll', function() {
+    var rect = cta.getBoundingClientRect();
+    if (rect.bottom < 0) show();
+  }, { passive: true });
 })();
 </script>
 </body>
