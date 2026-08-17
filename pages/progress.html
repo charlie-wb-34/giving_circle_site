@@ -106,14 +106,11 @@
       text-transform: uppercase;
       color: #C6D63C;
       letter-spacing: 0.005em;
-      min-width: 0;
-      overflow-wrap: break-word;
     }
     .of-goal {
       font-size: 13px;
       color: #74A992;
       white-space: nowrap;
-      min-width: 0;
     }
 
     /* ── row 2: amount left + cta ── */
@@ -145,17 +142,11 @@
 
     .loading { opacity: 0.5 }
 
-    @media (max-width: 560px) {
-      html, body { overflow-x: hidden }
-      .widget { padding: 24px 20px; width: 100%; max-width: 100% }
-      .widget-main { flex-direction: column; gap: 16px; margin-bottom: 20px }
-      .divider { display: none }
-      .members-block { display: flex; align-items: center; gap: 16px }
-      .members-number { font-size: 52px }
-      .members-label { margin-top: 0 }
-      .of-goal { white-space: normal }
-      .join-btn { display: none }
-      .amount-left { font-size: 14px }
+    @media (max-width: 500px) {
+      .widget { padding: 24px 20px }
+      .widget-main { gap: 20px }
+      .divider { height: 56px }
+      .members-number { font-size: 48px }
     }
   </style>
 </head>
@@ -205,10 +196,9 @@
    *     var r = BigQuery.Jobs.query({
    *       query: [
    *         'SELECT',
-   *         '  COUNT(*)          AS members,',
-   *         '  MAX(Total_Amount) AS totalRaised,',
-   *         '  MAX(Goal)         AS goal,',
-   *         '  MAX(Amount_left)  AS amountLeft',
+   *         '  COUNT(donor_name)         AS members,',
+   *         '  SUM(amount)               AS totalRaised,',
+   *         '  5000 - SUM(amount)        AS amountLeft',
    *         'FROM `giving-circle-dev.contributions.grapevine_contributions`'
    *       ].join(' '),
    *       useLegacySql: false,
@@ -218,8 +208,7 @@
    *     var out = {
    *       members:     +f[0].v,
    *       totalRaised: +f[1].v,
-   *       goal:        +f[2].v,
-   *       amountLeft:  +f[3].v
+   *       amountLeft:  +f[2].v
    *     };
    *     return ContentService
    *       .createTextOutput(JSON.stringify(out))
@@ -240,16 +229,17 @@
     return '$' + Math.round(n).toLocaleString('en-US');
   }
 
+  var GOAL = 5000;
+
   function render(d) {
-    var pct = Math.min(100, (d.totalRaised / d.goal) * 100);
+    var pct = Math.min(100, (d.totalRaised / GOAL) * 100);
     document.getElementById('count').textContent = d.members;
     document.getElementById('count').classList.remove('loading');
     document.getElementById('fill').style.width = pct.toFixed(1) + '%';
     document.getElementById('raised').textContent = fmt(d.totalRaised) + ' raised';
     document.getElementById('raised').classList.remove('loading');
     document.getElementById('left').textContent = fmt(d.amountLeft);
-    var goalAmt = d.goal || 5000;
-    document.getElementById('goal-label').textContent = 'of ' + fmt(goalAmt) + ' goal';
+    document.getElementById('goal-label').textContent = 'of ' + fmt(GOAL) + ' goal';
   }
 
   function showError() {
