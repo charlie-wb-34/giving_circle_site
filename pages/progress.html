@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress | Growler Philanthropists</title>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box }
+    html, body { margin: 0; padding: 0; height: 100% }
+    body {
+      font-family: 'Public Sans', system-ui, sans-serif;
+      background: #EEF1EC;
+      color: #EEF1EC;
+    }
+
+    .widget {
+      background: #0F3226;
+      padding: 32px 44px;
+      width: 100%;
+    }
+
+    /* standalone page: rounded card, centered with breathing room */
+    body.standalone {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+    }
+    body.standalone .widget {
+      border-radius: 12px;
+      max-width: 900px;
+    }
+
+    /* ── row 1: members + progress ── */
+    .widget-main {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 24px;
+    }
+
+    .members-block { flex: none }
+
+    .members-number {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(52px, 7vw, 80px);
+      font-weight: 800;
+      line-height: 0.88;
+      color: #C6D63C;
+      text-transform: uppercase;
+      letter-spacing: 0.005em;
+    }
+    .members-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #74A992;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .divider {
+      flex: none;
+      width: 1px;
+      height: 72px;
+      background: rgba(255,255,255,0.14);
+    }
+
+    .progress-block { flex: 1; min-width: 0 }
+
+    .progress-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #74A992;
+      font-weight: 600;
+      margin-bottom: 11px;
+    }
+    .progress-track {
+      height: 10px;
+      background: rgba(255,255,255,0.14);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #C6D63C;
+      border-radius: 5px;
+      width: 0%;
+      transition: width 1s cubic-bezier(.4,0,.2,1);
+    }
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .raised {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #C6D63C;
+      letter-spacing: 0.005em;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+    .of-goal {
+      font-size: 13px;
+      color: #74A992;
+      white-space: nowrap;
+      min-width: 0;
+    }
+
+    /* ── row 2: amount left + cta ── */
+    .widget-footer {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .amount-left { font-size: 15px; color: #A2C7B6 }
+    .amount-left strong { color: #EEF1EC; font-weight: 600 }
+
+    .join-btn {
+      background: #C6D63C;
+      color: #3E4814;
+      font-family: 'Public Sans', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 9px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex: none;
+    }
+    .join-btn:hover { background: #b5c235 }
+
+    .loading { opacity: 0.5 }
+
+    @media (max-width: 560px) {
+      html, body { overflow-x: hidden }
+      .widget { padding: 24px 20px; width: 100%; max-width: 100% }
+      .widget-main { flex-direction: column; gap: 16px; margin-bottom: 20px }
+      .divider { display: none }
+      .members-block { display: flex; align-items: center; gap: 16px }
+      .members-number { font-size: 52px }
+      .members-label { margin-top: 0 }
+      .of-goal { white-space: normal }
+      .join-btn { display: none }
+      .amount-left { font-size: 14px }
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <div class="widget-main">
+      <div class="members-block">
+        <div class="members-number loading" id="count">—</div>
+        <div class="members-label">Members joined</div>
+      </div>
+      <div class="divider"></div>
+      <div class="progress-block">
+        <div class="progress-label">Progress toward goal</div>
+        <div class="progress-track">
+          <div class="progress-fill" id="fill"></div>
+        </div>
+        <div class="progress-text">
+          <span class="raised loading" id="raised">Loading…</span>
+          <span class="of-goal" id="goal-label">of $5,000 goal</span>
+        </div>
+      </div>
+    </div>
+    <div class="widget-footer">
+      <div class="amount-left"><strong id="left">—</strong> still needed to reach the goal</div>
+      <a href="https://www.grapevine.org/giving-circle/ZZWhAL2/San-Diego-Giving-Circle"
+         target="_blank" rel="noopener" class="join-btn">Join — $50 ↗</a>
+    </div>
+  </div>
+
+  <script>
+  /*
+   * DATA SOURCE SETUP
+   * ─────────────────────────────────────────────────────────────────────────
+   * This widget reads live data from BigQuery via a Google Apps Script proxy.
+   * (A static site can't query BigQuery directly — Apps Script is free and
+   * takes about 5 minutes to configure.)
+   *
+   * STEP 1 — Create the Apps Script project
+   *   Go to https://script.google.com → New project
+   *
+   * STEP 2 — Enable BigQuery API
+   *   Left sidebar → Services (+ icon) → BigQuery API → Add
+   *
+   * STEP 3 — Replace Code.gs with:
+   *
+   *   function doGet() {
+   *     var r = BigQuery.Jobs.query({
+   *       query: [
+   *         'SELECT',
+   *         '  COUNT(*)          AS members,',
+   *         '  MAX(Total_Amount) AS totalRaised,',
+   *         '  MAX(Goal)         AS goal,',
+   *         '  MAX(Amount_left)  AS amountLeft',
+   *         'FROM `giving-circle-dev.contributions.grapevine_contributions`'
+   *       ].join(' '),
+   *       useLegacySql: false,
+   *       timeoutMs: 10000
+   *     }, 'giving-circle-dev');
+   *     var f = r.rows[0].f;
+   *     var out = {
+   *       members:     +f[0].v,
+   *       totalRaised: +f[1].v,
+   *       goal:        +f[2].v,
+   *       amountLeft:  +f[3].v
+   *     };
+   *     return ContentService
+   *       .createTextOutput(JSON.stringify(out))
+   *       .setMimeType(ContentService.MimeType.JSON);
+   *   }
+   *
+   * STEP 4 — Deploy as web app
+   *   Deploy → New deployment → Type: Web app
+   *   Execute as: Me  |  Who has access: Anyone
+   *   → Copy the web app URL
+   *
+   * STEP 5 — Paste the URL below as DATA_URL
+   * ─────────────────────────────────────────────────────────────────────────
+   */
+  var DATA_URL = 'https://script.google.com/macros/s/AKfycbwrL3_iIcSse5fSlFe6sHsRvjboZl9xG1Lx7D04DYzcIe2FunrrVieRKZvBv7oyD_2gLQ/exec'; // ← paste your Apps Script web app URL here
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function render(d) {
+    var pct = Math.min(100, (d.totalRaised / d.goal) * 100);
+    document.getElementById('count').textContent = d.members;
+    document.getElementById('count').classList.remove('loading');
+    document.getElementById('fill').style.width = pct.toFixed(1) + '%';
+    document.getElementById('raised').textContent = fmt(d.totalRaised) + ' raised';
+    document.getElementById('raised').classList.remove('loading');
+    document.getElementById('left').textContent = fmt(d.amountLeft);
+    var goalAmt = d.goal || 5000;
+    document.getElementById('goal-label').textContent = 'of ' + fmt(goalAmt) + ' goal';
+  }
+
+  function showError() {
+    document.getElementById('count').textContent = '—';
+    document.getElementById('count').classList.remove('loading');
+    document.getElementById('raised').textContent = 'Data unavailable';
+    document.getElementById('raised').classList.remove('loading');
+  }
+
+  if (DATA_URL) {
+    fetch(DATA_URL)
+      .then(function(r) { return r.json(); })
+      .then(render)
+      .catch(showError);
+  } else {
+    showError();
+  }
+
+  // When viewed standalone (not in an iframe), add card styling
+  if (window.self === window.top) {
+    document.body.classList.add('standalone');
+  }
+  </script>
+</body>
+</html>
