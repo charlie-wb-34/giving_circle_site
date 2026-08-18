@@ -197,8 +197,8 @@
    *       query: [
    *         'SELECT',
    *         '  COUNT(donor_name)         AS members,',
-   *         '  SUM(amount)               AS totalRaised,',
-   *         '  5000 - SUM(amount)        AS amountLeft',
+   *         '  SUM(amount_)               AS totalRaised,',
+   *         '  5000 - SUM(amount_)        AS amountLeft',
    *         'FROM `giving-circle-dev.contributions.grapevine_contributions`'
    *       ].join(' '),
    *       useLegacySql: false,
@@ -223,7 +223,7 @@
    * STEP 5 — Paste the URL below as DATA_URL
    * ─────────────────────────────────────────────────────────────────────────
    */
-  var DATA_URL = 'https://script.google.com/macros/s/AKfycbwrL3_iIcSse5fSlFe6sHsRvjboZl9xG1Lx7D04DYzcIe2FunrrVieRKZvBv7oyD_2gLQ/exec'; // ← paste your Apps Script web app URL here
+  var DATA_URL = 'https://script.google.com/macros/s/AKfycbxGKZaQAqhRaIH417EX196-HfsYQhSOwHweeBY-MLQQY9N7GKBngRPbkbOlNtyiMB9iGQ/exec'; // ← paste your Apps Script web app URL here
 
   function fmt(n) {
     return '$' + Math.round(n).toLocaleString('en-US');
