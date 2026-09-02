@@ -88,7 +88,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
         <a href="/" aria-current="page">Home</a>
-        <a href="/kickoff">Kickoff</a>
         <a href="/vote">Nominate</a>
         <a href="/events">Events</a>
         <a href="/contact">About</a>
@@ -336,47 +335,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
-<!-- Kickoff popup -->
-<div id="kickoff-popup" role="dialog" aria-label="Kickoff event" style="position:fixed;bottom:24px;right:24px;z-index:200;background:#0F3226;color:#EEF1EC;border-radius:10px;padding:20px 24px;max-width:320px;width:calc(100vw - 48px);box-shadow:0 8px 32px rgba(0,0,0,0.22);visibility:hidden;transform:translateY(20px);opacity:0;transition:transform 0.35s ease,opacity 0.35s ease,visibility 0.35s;">
-  <button id="kickoff-popup-close" aria-label="Dismiss" style="position:absolute;top:10px;right:10px;background:none;border:none;cursor:pointer;color:#A2C7B6;padding:4px;line-height:1;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-  <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C6D63C;font-weight:600;margin-bottom:8px;">Kickoff Event</div>
-  <div style="font-family:'Big Shoulders Display',sans-serif;font-size:24px;font-weight:800;text-transform:uppercase;line-height:1.05;margin-bottom:8px;">Sept 17 at Kairoa Brewing</div>
-  <p style="font-size:14px;line-height:1.55;margin:0 0 16px;color:#A2C7B6;">Our first gathering — come say hi, no membership required.</p>
-  <a href="/kickoff" style="display:inline-block;background:#C6D63C;color:#3E4814;font-weight:600;font-size:14px;padding:8px 20px;border-radius:4px;text-decoration:none;">See details</a>
-</div>
-
-<script>
-(function(){
-  var popup = document.getElementById('kickoff-popup');
-  var cta = document.getElementById('hero-cta');
-  var close = document.getElementById('kickoff-popup-close');
-  var shown = false;
-  var dismissed = false;
-
-  function show() {
-    if (shown || dismissed) return;
-    shown = true;
-    popup.style.visibility = 'visible';
-    popup.style.opacity = '1';
-    popup.style.transform = 'translateY(0)';
-  }
-
-  function hide() {
-    dismissed = true;
-    popup.style.opacity = '0';
-    popup.style.transform = 'translateY(20px)';
-    popup.style.visibility = 'hidden';
-  }
-
-  close.addEventListener('click', hide);
-
-  window.addEventListener('scroll', function() {
-    var rect = cta.getBoundingClientRect();
-    if (rect.bottom < 0) show();
-  }, { passive: true });
-})();
-</script>
 </body>
 </html>
